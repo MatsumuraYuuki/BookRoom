@@ -17,6 +17,9 @@ gem 'turbo-rails', '1.4.0'
 
 group :development, :test do
   gem 'debug', '1.7.1', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails' # 追加
+  gem 'factory_bot_rails' # 追加
+
 end
 
 group :development do
