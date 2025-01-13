@@ -1,30 +1,22 @@
-~
 default: &default
-# adapter: sqlite3
   adapter: mysql2
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-# timeout: 5000
+  encoding: utf8mb4
+  charset: utf8mb4
+  collation: utf8mb4_general_ci
+  pool: 5
+  timeout: 5000
 
 development:
   <<: *default
-# database: db/development.sqlite3
-  database: app_development
+  database: bookroom_development
+  username: root
+  password: password
+  host: localhost
 
 test:
   <<: *default
-# database: db/test.sqlite3
-  database: app_test
+  database: bookroom_test
+  username: root
+  password: password
+  host: localhost
 
-# production:
-# <<: *default
-# adapter: postgresql
-# encoding: unicode
-# url: <%= ENV['DATABASE_URL'] %>
-
-production:
-  <<: *default
-  database: <%= ENV['MYSQL_NAME'] %>
-  username: myuser
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  host: <%= ENV['MYSQL_HOST'] %>
-  
