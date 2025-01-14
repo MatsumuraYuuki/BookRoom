@@ -8,7 +8,6 @@ RSpec.describe User, type: :model do
     let(:password) { '12345678' }
     let(:user) { User.new(user_name: user_name, email: email, password: password, password_confirmation: password) }
 
-
     describe 'User.first' do
 
       before do
@@ -44,6 +43,17 @@ RSpec.describe User, type: :model do
   
               expect(user.valid?).to be(false)
               expect(user.errors[:user_name]).to include('is too long (maximum is 20 characters)')
+            end
+          end
+        end
+
+        describe 'user_name存在性の検証' do
+          context 'nicknameが空欄の場合' do
+            let(:user_name) { '' }
+    
+            it 'User オブジェクトは無効である' do
+              expect(user.valid?).to be(false)
+              expect(user.errors[:user_name]).to include("can't be blank")
             end
           end
         end
