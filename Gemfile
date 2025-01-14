@@ -9,6 +9,7 @@ gem 'jbuilder',        '2.11.5'
 gem 'mysql2', '~> 0.5.6' # 追加
 gem 'puma', '5.6.8'
 gem 'rails', '7.0.8.5'
+gem 'devise' # 追記
 gem 'sassc-rails', '2.1.2'
 gem 'sprockets-rails', '3.4.2'
 gem 'stimulus-rails', '1.2.1'
