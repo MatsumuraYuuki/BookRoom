@@ -36,3 +36,7 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+
+#追加
+node_modules/
